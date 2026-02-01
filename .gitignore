@@ -1,0 +1,73 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+*.lcov
+
+# Production builds
+dist/
+build/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Vite
+.vite/
+node_modules/.vite/
+
+# Angular
+.angular/
+.angular/cache/
+*.tsbuildinfo
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Package manager lock files (optional - keep pnpm-lock.yaml)
+# pnpm-lock.yaml
+# package-lock.json
+# yarn.lock
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+/packages/mfe-angular/+
+/packages/mfe-angular/Done
+/packages/mfe-angular/ELIFECYCLE
+/packages/mfe-angular/Error
+/packages/mfe-angular/mfe-angular@1.0.0
+/packages/mfe-angular/ng
+/packages/mfe-angular/pnpm

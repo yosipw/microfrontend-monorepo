@@ -1,0 +1,30 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# TypeScript
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# JavaScript
+*.js text eol=lf
+*.jsx text eol=lf
+
+# JSON
+*.json text eol=lf
+
+# Configuration files
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
+
+# Vue
+*.vue text eol=lf
+
+# Documentation
+*.md text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Lockfiles - do not modify
+pnpm-lock.yaml binary

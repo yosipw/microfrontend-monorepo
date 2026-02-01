@@ -1,0 +1,5 @@
+packages:
+  - packages/shell-react
+  - packages/mfe-angular
+  - packages/mfe-vue
+  - packages/shared-components

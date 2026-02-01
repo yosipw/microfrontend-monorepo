@@ -1,0 +1,5 @@
+# Angular specific
+.angular/
+.angular/cache/
+*.tsbuildinfo
+dist/
