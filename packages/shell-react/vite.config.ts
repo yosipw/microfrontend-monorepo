@@ -13,6 +13,11 @@ export default defineConfig({
           externalType: 'url',
           from: 'vite',
         },
+        mfeAngular: {
+          external: 'http://localhost:3002/remoteEntry.js',
+          externalType: 'url',
+          from: 'webpack',
+        },
       },
       shared: ['vue', 'react', 'react-dom'],
     }),

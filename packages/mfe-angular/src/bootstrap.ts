@@ -1,19 +1,33 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { AppModule } from './app/app.module';
+import { createApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { ApplicationRef } from '@angular/core';
 
-const bootstrapAngular = () => {
-    if (environment.production) {
-        enableProdMode();
-    }
+let appRef: ApplicationRef | null = null;
 
-    platformBrowserDynamic()
-        .bootstrapModule(AppModule)
-        .catch(err => console.error(err));
+export const mount = async (container: HTMLElement) => {
+  try {
+    console.log('Mounting Angular MFE...');
+    appRef = await createApplication({
+      providers: []
+    });
+    
+    const componentRef = appRef.bootstrap(AppComponent);
+    container.appendChild(componentRef.location.nativeElement);
+    
+    console.log('Angular MFE mounted successfully');
+    return componentRef;
+  } catch (err) {
+    console.error('Error mounting Angular MFE:', err);
+    throw err;
+  }
 };
 
-if (window['angularMicrofrontend']) {
-    window['angularMicrofrontend'].bootstrap = bootstrapAngular;
-} else {
-    bootstrapAngular();
-}
+export const unmount = () => {
+  console.log('Unmounting Angular MFE...');
+  if (appRef) {
+    appRef.destroy();
+    appRef = null;
+  }
+};
+
+export default { mount, unmount };

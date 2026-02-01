@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3001",
-    "dev:mf": "pnpm build && pnpm preview",
+    "dev:watch": "concurrently \"pnpm build:watch\" \"pnpm preview\"",
     "build": "vite build",
+    "build:watch": "vite build --watch",
     "preview": "vite preview --port 3001",
     "typecheck": "vue-tsc --noEmit"
   },
@@ -17,7 +18,8 @@
     "@originjs/vite-plugin-federation": "^1.4.1",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.5.1",
-    "typescript": "~5.6.3",
+    "concurrently": "^9.0.1",
+    "typescript": "~5.9.3",
     "vite": "^5.4.11",
     "vue-tsc": "^2.1.10"
   }

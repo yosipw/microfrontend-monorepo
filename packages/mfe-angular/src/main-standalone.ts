@@ -1,6 +1,5 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 
-// For standalone development
 bootstrapApplication(AppComponent)
   .catch(err => console.error(err));

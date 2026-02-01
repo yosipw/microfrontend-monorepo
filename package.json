@@ -1,28 +1,26 @@
 {
   "name": "microfrontend-monorepo",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "pnpm -r --stream build",
-    "build:mfe-angular": "pnpm --filter mfe-angular build",
-    "build:mfe-vue": "pnpm --filter mfe-vue build",
-    "build:shell": "pnpm --filter shell-react build",
-    "dev:mfe-vue": "pnpm --filter mfe-vue dev:mf",
-    "dev:mfe-angular": "pnpm --filter mfe-angular start",
+    "dev": "concurrently \"pnpm --filter shell-react dev\" \"pnpm --filter mfe-vue dev\" \"pnpm --filter mfe-angular start\"",
     "dev:shell": "pnpm --filter shell-react dev",
-    "dev": "concurrently \"pnpm dev:mfe-vue\" \"pnpm dev:shell\"",
-    "preview:mfe-vue": "pnpm --filter mfe-vue preview",
-    "preview:shell": "pnpm --filter shell-react preview",
-    "clean": "pnpm -r exec rm -rf dist node_modules/.vite",
+    "dev:vue": "pnpm --filter mfe-vue dev",
+    "dev:angular": "pnpm --filter mfe-angular start",
+    "build": "pnpm -r build",
+    "clean": "pnpm -r exec rm -rf dist node_modules",
+    "install:all": "pnpm install",
+    "test": "pnpm -r test",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r exec tsc --noEmit"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
     "pnpm": "^7.0.0",
-    "typescript": "~5.6.3",
-    "vite": "^4.0.0"
+    "typescript": "~5.9.3",
+    "vite": "^7.3.0"
   }
 }
